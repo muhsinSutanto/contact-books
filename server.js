@@ -2,7 +2,11 @@ const express = require('express')
 
 const app = express()
 
+const connectDB = require('./config/db')
+
 app.use(express.json({extended: false}))
+
+connectDB()
 
 //test route
 app.get('/', (req, res) => res.json({message: 'hello world'}))
