@@ -1,11 +1,11 @@
 const express = require('express')
-const router = express.Router()
-const config = require('config')
-const bcrypt = require('bcrypt')
-const jwt    = require('jsonwebtoken')
-const auth = require('../middleware/auth')
+const router  = express.Router()
+const config  = require('config')
+const bcrypt  = require('bcrypt')
+const jwt     = require('jsonwebtoken')
+const auth    = require('../middleware/auth')
 
-const User = require('../models/User')
+const User    = require('../models/User')
 
 const {check, validationResult} = require('express-validator')
 
@@ -22,6 +22,8 @@ router.get('/', auth, async(req, res) => {
     
   }
 })
+
+
 
 //@route  POST api/auth
 //@desc   auth user & get token
